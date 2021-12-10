@@ -6,7 +6,7 @@
 
 body{
     width: 100vw;
-    height: 100vw;
+    height: 100vh;
     background-color: rgb(15, 15, 15);
     overflow: hidden;
 }
