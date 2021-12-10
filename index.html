@@ -1,0 +1,111 @@
+<!-- index.css file contain code for making a cube, that is reusable.
+Just furnish following 5 variables for each different .cube-container from HTML into CSS :
+
+mainColor   --(color in linear-gradient for cube's body)
+x
+y
+size
+baseColor (without specifying opacity)__->(in RGB format only)<-__(box shadow below cube) 
+
+
+index.css is imported in final.css that is handling the revealing animations
+-->
+
+
+<!-- Note :  You need to supply box-shadow manually for each cube because there is no way to plugin different  -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./resources/index.css">
+    <title>Ambient color effect</title>
+</head>
+<body>
+
+    <div class="cube-container" style="--delay:0;--mainColor: rgb(4, 163, 4); --baseColor: 0, 255, 0 ; --x: 42; --y: 14; --size: 15;">
+        <div>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <div class="cube-container" style="--delay:1;--mainColor: rgb(139, 0, 0); --baseColor: 255, 0, 0 ; --x: 78; --y: 6; --size: 9;">
+        <div>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <div class="cube-container" style="--delay:2;--mainColor: rgb(2, 2, 143); --baseColor: 0, 0, 255 ; --x: 93; --y: 25; --size: 11;">
+        <div>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <div class="cube-container" style="--delay:3;--mainColor: rgb(155, 3, 155); --baseColor: 190, 3, 190 ; --x: -3; --y: 31; --size: 11;">
+        <div>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <div class="cube-container" style="--delay:4;--mainColor: rgb(235, 70, 11); --baseColor: 243, 70, 7 ; --x: 12; --y: 0; --size: 13;">
+        <div>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <div class="cube-container" style="--delay:5;--mainColor: rgb(228, 228, 8); --baseColor: 255, 255, 0 ; --x: 55; --y: -1.5; --size: 5;">
+        <div>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <audio loop id="audio">
+        <source src="./resources/Y2Mate.is - Michael FK - Yearning  Emotional Ambient Piano Music-8I_q_4wM8tA-160k-1639072815368.mp3" type="audio/mp3"> 
+    </audio>
+
+    <button id="button" onClick="play()">Click to Play</button>
+
+    <script>
+        function play(){
+            audio = document.querySelector('#audio');
+            button = document.querySelector('#button');
+
+            audio.play();
+            button.style.display = 'none';
+        }
+    </script>
+</body>
+</html>

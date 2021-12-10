@@ -1,0 +1,104 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+    height: 100vw;
+    background-color: rgb(15, 15, 15);
+    overflow: hidden;
+}
+
+.cube-container{
+    width: calc(var(--size)*1vw);
+    height: calc(var(--size)*1vw);
+    position: absolute;
+    left: calc(var(--x)*1vw);
+    top: calc(var(--y)*1vw);
+    transform-style: preserve-3d;
+    animation: anim 8s linear infinite;
+}
+
+@keyframes anim{
+    from{  transform: rotateX(-24deg) rotateY(0); }
+
+    to{  transform: rotateX(-24deg) rotateY(360deg); }
+}
+
+
+
+.cube-container div, .cube-container div span{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.cube-container div{  
+    transform-style: preserve-3d; 
+    transform: translateZ(calc(var(--size)*0.5vw));
+}
+
+.cube-container div span{
+    background: linear-gradient(black, var(--mainColor));
+    border: 0.05vw solid var(--mainColor);
+}
+
+
+.cube-container div span:nth-child(1){
+    transform: rotateY(90deg);
+    transform-origin: left;
+}
+.cube-container div span:nth-child(2){
+    transform: rotateY(-90deg);
+    transform-origin: right;
+}
+.cube-container div span:nth-child(3){
+    transform: translateZ(calc(var(--size)*-1vw));
+}
+.cube-container div span:nth-child(4){
+    transform: rotateX(-90deg);
+    transform-origin: top;
+    background: rgb(10, 10, 10);
+}
+.cube-container div span:nth-child(5){
+    transform: rotateX(90deg) translateZ(calc(var(--size)*-0.4vw));
+    transform-origin: bottom;
+    background: rgb(var(--baseColor));
+    filter: blur(15px);
+    box-shadow: 0 0 calc(var(--size)*0.2vw) rgba(var(--baseColor), 0.2),
+    0 0 calc(var(--size)*0.4vw) rgba(var(--baseColor), 0.4),
+    0 0 calc(var(--size)*0.6vw) rgba(var(--baseColor), 0.6),
+    0 0 calc(var(--size)*0.7vw) rgba(var(--baseColor), 0.8),
+    0 0 calc(var(--size)*0.9vw) rgba(var(--baseColor), 1);
+}
+
+
+
+/*  -----------         Extra reality effect -----------------  */
+
+.cube-container div span::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.692);
+}
+
+
+#button{
+    position: absolute;
+    left: 45vw;
+    top: 45vh;
+    background-color: white;
+    color: black;
+    padding: 1vw 1.4vw 1vw 1.4vw;
+    font-weight: bold;
+    border-radius: 0.7vw;
+    cursor: pointer;
+}
